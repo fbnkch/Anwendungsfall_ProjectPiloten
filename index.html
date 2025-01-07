@@ -8,53 +8,49 @@
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Niederweser Fahrzeugbuchung</h1>
+    <div class="header-content">
+      <h1>Niederweser Verlag</h1>
       <p>Buchen Sie schnell und einfach Ihr Fahrzeug.</p>
+    </div>
+    <div class="user-section">
+      <span id="user-info">Login</span>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <!-- Fahrzeugliste -->
-      <section id="vehicles">
-        <h2>Verfügbare Fahrzeuge</h2>
-        <div class="vehicle-list">
-          <div class="vehicle">
-            <div class="vehicle-image">
-              <!-- Platz für ein Bild -->
-            </div>
-            <h3>E-Scooter Emil</h3>
-            <p>Akkustand: 80%</p>
-            <p class="status available">Verfügbar</p>
-            <button>Reservieren</button>
-          </div>
-          <div class="vehicle">
-            <div class="vehicle-image">
-              <!-- Platz für ein Bild -->
-            </div>
-            <h3>E-Fahrrad Ursula</h3>
-            <p>Akkustand: 100%</p>
-            <p class="status available">Verfügbar</p>
-            <button>Reservieren</button>
-          </div>
-          <div class="vehicle">
-            <div class="vehicle-image">
-              <!-- Platz für ein Bild -->
-            </div>
-            <h3>Fahrrad Gottfried</h3>
-            <p class="status unavailable">Nicht verfügbar</p>
-            <button disabled>Reservieren</button>
-          </div>
-        </div>
-      </section>
-    </div>
+    <!-- Fahrzeugübersicht -->
+    <section id="vehicles">
+      <h2>Fahrzeugübersicht</h2>
+      <div class="vehicle" data-vehicle="E-Scooter Emil">
+        <h3>E-Scooter Emil</h3>
+        <p>Akkustand: 80%</p>
+        <p class="status available">Verfügbar</p>
+        <button>Reservieren</button>
+      </div>
+      <div class="vehicle" data-vehicle="E-Fahrrad Ursula">
+        <h3>E-Fahrrad Ursula</h3>
+        <p>Akkustand: 100%</p>
+        <p class="status available">Verfügbar</p>
+        <button>Reservieren</button>
+      </div>
+      <div class="vehicle unavailable" data-vehicle="Fahrrad Gottfried">
+        <h3>Fahrrad Gottfried</h3>
+        <p class="status unavailable">Nicht verfügbar</p>
+        <button disabled>Reservieren</button>
+      </div>
+    </section>
+
+    <!-- Buchungsstatus -->
+    <section id="status">
+      <h2>Buchungsstatus</h2>
+      <p id="status-message">Keine aktive Buchung.</p>
+    </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>Kontakt: info@niederweser-verlag.de | © 2025 Niederweser Verlag GmbH</p>
-    </div>
+    <p>Kontakt: info@niederweser-verlag.de | Supportnummer: 0221 8277-9422</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
