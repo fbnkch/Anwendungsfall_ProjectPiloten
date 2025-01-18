@@ -1,6 +1,7 @@
 // script.js
 
 let loggedIn = false;
+let reservations = []; // Array-Variable für alle Reservierungen
 
 document.addEventListener('DOMContentLoaded', () => {
   const userInfo = document.getElementById('user-info');
@@ -32,7 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const vehicleName = button.closest('.vehicle').dataset.vehicle;
-      statusMessage.textContent = `Sie haben ${vehicleName} erfolgreich reserviert!`;
+      const reservation = `Sie haben ${vehicleName} erfolgreich reserviert!`;
+      reservations.push(reservation); // Reservierung zum Array hinzufügen
+
+      // Alle Reservierungen anzeigt
+      statusMessage.innerHTML = '';
+      reservations.forEach(reservation => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = reservation;
+        statusMessage.appendChild(paragraph);
+      });
     });
   });
 });
