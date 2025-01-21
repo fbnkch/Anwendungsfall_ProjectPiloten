@@ -1,4 +1,3 @@
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -26,6 +25,23 @@ header .header-content p {
   font-size: 1em;
 }
 
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 1em;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
 .user-section {
   background: white;
   color: #007acc;
@@ -37,23 +53,29 @@ header .header-content p {
 }
 
 main {
-  padding: 1em; 
+  padding: 1em;
 }
 
 h2 {
   color: #007acc;
-  margin-bottom: 0.5em; 
+  margin-bottom: 0.5em;
 }
 
 .vehicle {
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 0.5em; 
+  padding: 0.5em;
   margin-bottom: 1em;
   background-color: white;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.vehicle:hover {
+  transform: scale(1.02);
 }
 
 .vehicle .info {
@@ -61,26 +83,26 @@ h2 {
 }
 
 .vehicle img {
-  width: 150px; 
-  height: auto; 
+  width: 150px;
+  height: auto;
   object-fit: cover;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .vehicle h3 {
-  margin: 0 0 0.2em; 
+  margin: 0 0 0.2em;
 }
 
 .vehicle p {
-  margin: 0.3em 0; 
+  margin: 0.3em 0;
 }
 
 .vehicle button {
   background-color: #007acc;
   color: white;
   border: none;
-  padding: 0.5em; 
-  font-size: 0.9em; 
+  padding: 0.5em;
+  font-size: 0.9em;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -102,7 +124,7 @@ h2 {
 
 footer {
   text-align: center;
-  padding: 0.5em; 
+  padding: 0.5em;
   background-color: #f1f1f1;
   color: #007acc;
   font-size: 0.9em;
