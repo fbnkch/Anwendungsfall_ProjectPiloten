@@ -5,7 +5,7 @@
   --accent-color: #28a745;
   --error-color: #dc3545;
   --text-color: #333;
-  --font-family: 'Arial', sans-serif;
+  --font-family: 'Open Sans', sans-serif;
 }
 
 /* Globales Reset */
@@ -197,7 +197,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #f8f9fa;
   color: #333;
 }
@@ -250,20 +250,55 @@ body {
 
 /* Login-Seite */
 .login-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .login-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2em;
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-card label {
+  margin-bottom: 10px;
+}
+
+.login-card input {
   width: 100%;
-  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-card button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-card button[type="submit"]:hover {
+  background-color: #005f99;
 }
 
 .login-card h2 {
