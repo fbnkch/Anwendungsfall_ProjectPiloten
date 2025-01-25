@@ -3,68 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahrzeugbuchung</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Startseite</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <h1>Niederweser Verlag</h1>
-      <p>Buchen Sie schnell und einfach Ihr Fahrzeug.</p>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#vehicles">Fahrzeuge</a></li>
-        <li><a href="#status">Buchungsstatus</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </nav>
-    <div class="user-section">
-      <span id="user-info">Login</span>
-    </div>
-  </header>
-
-  <main>
-    <section id="vehicles">
-      <h2>Fahrzeugübersicht</h2>
-      <div class="vehicle" data-vehicle="E-Scooter Emil">
-        <div class="info">
-          <h3>E-Scooter Emil</h3>
-          <p>Akkustand: 80%</p>
-          <p class="status available">Verfügbar</p>
-          <button>Reservieren</button>
-        </div>
-        <img src="images/e-scooter_emil.jpg" alt="E-Scooter Emil">
-      </div>
-      <div class="vehicle" data-vehicle="E-Fahrrad Ursula">
-        <div class="info">
-          <h3>E-Fahrrad Ursula</h3>
-          <p>Akkustand: 100%</p>
-          <p class="status available">Verfügbar</p>
-          <button>Reservieren</button>
-        </div>
-        <img src="images/E-Fahrrad_Ursula.jpg" alt="E-Fahrrad Ursula">
-      </div>
-      <div class="vehicle" data-vehicle="Fahrrad Gottfried">
-        <div class="info">
-          <h3>Fahrrad Gottfried</h3>
-          <p class="status available">Verfügbar</p>
-          <button>Reservieren</button>
-        </div>
-        <img src="images/Fahrrad_Gottfried.jpg" alt="Fahrrad Gottfried">
-      </div>
-    </section>
-
-    <section id="status">
-      <h2>Buchungsstatus</h2>
-      <p id="status-message">Keine aktive Buchung.</p>
-    </section>
+    <header class="header">
+        <nav class="nav">
+          <a href="index.html" class="nav-link active">Startseite</a>
+          <a href="vehicles.html" class="nav-link">Fahrzeuge</a>
+          <a href="reservations.html" class="nav-link">Reservierungen</a>
+          <a href="login.html" class="nav-link">Login</a>
+        </nav>
+    </header>
+      
+  <main class="main">
+    <section class="hero">
+        <h2>Willkommen!</h2>
+        <p>Reservieren Sie jetzt Ihren E-Roller, Ihr Fahrrad oder E-Fahrrad ganz bequem online.</p>
+        <img src="images/Homepage_Frau.jpg" alt="Bild" class="hero-image">
+        <a href="vehicles.html" class="cta-button">Fahrzeuge ansehen</a>
+      </section>
   </main>
-
-  <footer>
-    <p>Kontakt: info@niederweser-verlag.de | Supportnummer: 0221 8277-9422</p>
+  <footer class="footer">
+    <p>© 2025 Niederweser Verlag GmbH | <a href="support.html">Support</a></p>
   </footer>
-
-  <script src="style.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

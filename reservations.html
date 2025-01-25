@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservierungen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Startseite</a>
+      <a href="vehicles.html" class="nav-link">Fahrzeuge</a>
+      <a href="reservations.html" class="nav-link active">Reservierungen</a>
+      <a href="login.html" class="nav-link">Login</a>
+    </nav>
+  </header>
+
+  <!-- Reservierungen -->
+  <main class="main">
+    <section class="reservation-section">
+      <h2>Aktive Reservierungen</h2>
+      <ul id="active-reservations" class="reservation-list">
+        <!-- Dynamische Einträge -->
+      </ul>
+
+      <h2>Vergangene Reservierungen</h2>
+      <ul id="past-reservations" class="reservation-list">
+        <li class="reservation-item">
+          <strong>E-Fahrrad Ursula</strong> - 23.12.2024, 10:00, Neukölln, Mitarbeiterkennnummer: 12345
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Niederweser Verlag GmbH</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
