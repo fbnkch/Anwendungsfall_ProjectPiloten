@@ -228,7 +228,7 @@ body {
   color: white;
   padding: 0.5em 1em;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: background-color 0.3s;
 }
 
@@ -257,6 +257,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .login-section h2 {
   text-align: center;
@@ -369,4 +370,16 @@ body {
 .reservation-item strong {
   color: #007acc;
   font-size: 1.1em;
+}
+.reserve-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reserve-button:hover {
+  background-color: #007acc;
 }

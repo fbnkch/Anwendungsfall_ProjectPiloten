@@ -13,6 +13,8 @@
       <a href="index.html" class="nav-link">Startseite</a>
       <a href="vehicles.html" class="nav-link">Fahrzeuge</a>
       <a href="reservations.html" class="nav-link active">Reservierungen</a>
+      <a href="#" class="nav-link">Karte</a>
+      <a href="#" class="nav-link">Standorte</a>
       <a href="login.html" class="nav-link">Login</a>
     </nav>
   </header>
@@ -20,16 +22,33 @@
   <!-- Reservierungen -->
   <main class="main">
     <section class="reservation-section">
-      <h2>Aktive Reservierungen</h2>
-      <ul id="active-reservations" class="reservation-list">
+        
+      <h2>Meine Reservierungen</h2>
+      <ul id="my-reservations" class="reservation-list">
         <!-- Dynamische Einträge -->
       </ul>
 
-      <h2>Vergangene Reservierungen</h2>
+      <h2>Meine Vergangenen Reservierungen</h2>
       <ul id="past-reservations" class="reservation-list">
         <li class="reservation-item">
-          <strong>E-Fahrrad Ursula</strong> - 23.12.2024, 10:00, Neukölln, Mitarbeiterkennnummer: 12345
+          <strong>E-Fahrrad Ursula</strong> - 23.12.2024, 10:00, Fahrzeugstandort: Neukölln
         </li>
+      </ul>
+
+      <h2>Alle Reservierungen</h2>
+      <ul id="alle-reservations" class="reservation-list">
+        <li class="reservation-item">
+          <strong>E-Fahrrad Ursula</strong> - 23.12.2024, 10:00, Fahrzeugstandort: Neukölln, Mitarbeiterkennnummer: null
+        </li>
+        <li class="reservation-item">
+          <strong>E-Scooter Emil</strong> - 31.12.2024, 14:11, Fahrzeugstandort: Neukölln, Mitarbeiterkennnummer: 5678
+        </li>
+        <li class="reservation-item">
+          <strong>E-Scooter Emil</strong> - 12.01.2025, 12:21, Fahrzeugstandort: Neukölln, Mitarbeiterkennnummer: 1234
+        </li>
+      </ul>
+      <ul id="all-reservations" class="reservation-list">
+        <!-- Dynamische Einträge -->
       </ul>
     </section>
   </main>

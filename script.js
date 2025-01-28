@@ -18,12 +18,12 @@ function loginUser(username) {
     return;
   }
 
-  currentUser = username.trim();
+  let currentUser = username.trim();
   sessionStorage.setItem("currentUser", currentUser);
   showFeedback(`Willkommen, ${currentUser}!`, "success");
   updateUserStatus();
   setTimeout(() => {
-    window.location.href = "vehicles.html";
+    window.location.href = "index.html";
   }, 1500);
 }
 
@@ -49,7 +49,7 @@ function updateUserStatus() {
     userStatus.textContent = "Login";
     userStatus.style.cursor = "pointer";
     userStatus.onclick = () => {
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     };
   }
 }
@@ -73,6 +73,7 @@ function reserveVehicle(vehicleId) {
       timestamp: new Date().getTime()
     };
     reservations.push(reservation);
+    //reservations = [];
     localStorage.setItem("reservations", JSON.stringify(reservations));
     showFeedback(`Fahrzeug ${vehicle.name} erfolgreich reserviert!`, "success");
     window.location.href = "reservations.html";
@@ -112,19 +113,48 @@ function loadReservations() {
 
 // Funktion: Aktuelle Reservierungen anzeigen
 function showCurrentReservations() {
-  const currentReservationsElement = document.getElementById("active-reservations");
+  const currentReservationsElement = document.getElementById("my-reservations");
   if (currentReservationsElement) {
     currentReservationsElement.innerHTML = "";
     reservations.forEach(reservation => {
       const reservationElement = document.createElement("li");
       reservationElement.className = "reservation-item";
       reservationElement.innerHTML = `
-        <strong>${reservation.vehicle.name}</strong> - ${new Date(reservation.timestamp).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}, ${new Date(reservation.timestamp).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}, Neukölln, Mitarbeiterkennnummer: ${reservation.user}
-      `;
+        <strong>${reservation.vehicle.name}</strong> - ${new Date(reservation.timestamp).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}, ${new Date(reservation.timestamp).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}, Fahrzeugstandort: Neukölln
+        <button class="activate-button reserve-button" data-reservation-id="${reservation.id}">Aktivieren</button>`;
       currentReservationsElement.appendChild(reservationElement);
     });
   }
 }
+
+// Funktion: Alle Reservierungen anzeigen
+function showAllReservations() {
+  const allReservationsElement = document.getElementById("all-reservations");
+  if (allReservationsElement) {
+    allReservationsElement.innerHTML = "";
+    reservations.forEach(reservation => {
+      const reservationElement = document.createElement("li");
+      reservationElement.className = "reservation-item";
+      reservationElement.innerHTML = `
+        <strong>${reservation.vehicle.name}</strong> - ${new Date(reservation.timestamp).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}, ${new Date(reservation.timestamp).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}, Fahrzeugstandort:Neukölln, Mitarbeiterkennnummer: ${reservation.user}
+      `;
+      allReservationsElement.appendChild(reservationElement);
+    });
+  }
+}
+
+// Funktion: Reservierung aktivieren
+function activateReservation(reservationId) {
+  const reservation = reservations.find(reservation => reservation.id === parseInt(reservationId));
+  if (reservation) {
+    // Hier kann die Logik für die Aktivierung der Reservierung hinzugefügt werden
+    console.log(`Reservierung ${reservationId} aktiviert`);
+  } else {
+    console.error(`Reservierung ${reservationId} nicht gefunden`);
+  }
+}
+
+
 
 // Event-Listener für Reservier-Button
 document.addEventListener("DOMContentLoaded", () => {
@@ -135,8 +165,20 @@ document.addEventListener("DOMContentLoaded", () => {
       reserveVehicle(vehicleId);
     });
   });
+  const activateButtons = document.querySelectorAll(".activate-button");
+  activateButtons.forEach(button => {
+    button.addEventListener("click", event => {
+      const reservationId = event.target.dataset.reservationId;
+      activateReservation(reservationId);
+    });
+  })
   loadVehicleList();
   loadReservations();
   showCurrentReservations();
+  showAllReservations();
+  showMyReservations();
   updateUserStatus();
+  setTimeout(() => {
+    window.location.href = "vehicles.html";
+  }, 1500);
 });
