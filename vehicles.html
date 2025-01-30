@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahrzeuge</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Navigation -->
-  <header class="header">
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Startseite</a>
-      <a href="vehicles.html" class="nav-link active">Fahrzeuge</a>
-      <a href="reservations.html" class="nav-link">Reservierungen</a>
-      <a href="#" class="nav-link">Karte</a>
-      <a href="#" class="nav-link">Standorte</a>
-      <a href="login.html" class="nav-link">Login</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrzeuge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Startseite</a>
+        <a href="vehicles.html" class="nav-link active">Fahrzeuge</a>
+        <a href="reservations.html" class="nav-link">Reservierungen</a>
+        <a href="#" class="nav-link">Karte</a>
+        <a href="#" class="nav-link">Standorte</a>
+        <a href="login.html" class="nav-link">Login</a>
+      </nav>
+    </header>
 
-  <!-- Fahrzeugübersicht -->
-  <main class="main">
-    <section class="vehicle-list">
-      <article class="vehicle-card">
-        <div class="vehicle-image">
-          <img src="images/E-scooter_Emil.jpg" alt="E-Roller Emil" class="vehicle-image">
-        </div>
-        <h3>E-Roller Emil</h3>
-        <p>Akkustand: 80%</p>
-        <p>Verfügbare Anzahl: 20</p>
-        <button class="reserve-button" data-vehicle-id="1">Reservieren</button>
-      </article>
-      <article class="vehicle-card">
-        <div class="vehicle-image">
-          <img src="images/Fahrrad_Gottfried.jpg" alt="Fahrrad Gottfried" class="vehicle-image">
-        </div>
-        <h3>Fahrrad Gottfried</h3>
-        <p>Status: Verfügbar</p>
-        <p>Verfügbare Anzahl: 50</p>
-        <button class="reserve-button" data-vehicle-id="2">Reservieren</button>
-      </article>
-      <article class="vehicle-card">
-        <div class="vehicle-image">
-          <img src="images/E-Fahrrad_Ursula.jpg" alt="E-Fahrrad Ursula" class="vehicle-image">
-        </div>
-        <h3>E-Fahrrad Ursula</h3>
-        <p>Akkustand: 100%</p>
-        <p>Verfügbare Anzahl: 23</p>
-        <button class="reserve-button" data-vehicle-id="3">Reservieren</button>
-      </article>
-    </section>
-  </main>
+    <!-- Fahrzeugübersicht -->
+    <main class="main">
+      <section class="vehicle-list">
+        <article class="vehicle-card">
+          <div class="vehicle-image">
+            <img
+              src="images/E-scooter_Emil.jpg"
+              alt="E-Roller Emil"
+              class="vehicle-image"
+            />
+          </div>
+          <h3>E-Roller Emil</h3>
+          <p>Akkustand: 80%</p>
+          <p>Verfügbare Anzahl: 20</p>
+          <button class="reserve-button" data-vehicle-id="1">
+            Reservieren
+          </button>
+        </article>
+        <article class="vehicle-card">
+          <div class="vehicle-image">
+            <img
+              src="images/Fahrrad_Gottfried.jpg"
+              alt="Fahrrad Gottfried"
+              class="vehicle-image"
+            />
+          </div>
+          <h3>Fahrrad Gottfried</h3>
+          <p>Status: Verfügbar</p>
+          <p>Verfügbare Anzahl: 50</p>
+          <button class="reserve-button" data-vehicle-id="2">
+            Reservieren
+          </button>
+        </article>
+        <article class="vehicle-card">
+          <div class="vehicle-image">
+            <img
+              src="images/E-Fahrrad_Ursula.jpg"
+              alt="E-Fahrrad Ursula"
+              class="vehicle-image"
+            />
+          </div>
+          <h3>E-Fahrrad Ursula</h3>
+          <p>Akkustand: 100%</p>
+          <p>Verfügbare Anzahl: 23</p>
+          <button class="reserve-button" data-vehicle-id="3">
+            Reservieren
+          </button>
+        </article>
+      </section>
+    </main>
 
-  <footer class="footer">
-    <p>© 2025 Niederweser Verlag GmbH</p>
-  </footer>
+    <footer class="footer">
+      <p>© 2025 Niederweser Verlag GmbH</p>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

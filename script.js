@@ -1,8 +1,23 @@
 // Fahrzeuge-Daten
 let vehicles = [
-  { id: 1, name: "E-Roller Emil", count: 10, image: "images/E-scooter_Emil.jpg" },
-  { id: 2, name: "Fahrrad Gottfried", count: 14, image: "images/Fahrrad_Gottfried.jpg" },
-  { id: 3, name: "E-Fahrrad Ursula", count: 5, image: "images/E-Fahrrad_Ursula.jpg" }
+  {
+    id: 1,
+    name: "E-Roller Emil",
+    count: 10,
+    image: "images/E-scooter_Emil.jpg",
+  },
+  {
+    id: 2,
+    name: "Fahrrad Gottfried",
+    count: 14,
+    image: "images/Fahrrad_Gottfried.jpg",
+  },
+  {
+    id: 3,
+    name: "E-Fahrrad Ursula",
+    count: 5,
+    image: "images/E-Fahrrad_Ursula.jpg",
+  },
 ];
 
 // Reservierungsdaten
@@ -65,12 +80,14 @@ function showFeedback(message, type) {
 
 // Funktion: Fahrzeug reservieren
 function reserveVehicle(vehicleId) {
-  const vehicle = vehicles.find(vehicle => vehicle.id === parseInt(vehicleId));
+  const vehicle = vehicles.find(
+    (vehicle) => vehicle.id === parseInt(vehicleId)
+  );
   if (vehicle) {
     const reservation = {
       vehicle: vehicle,
       user: currentUser,
-      timestamp: new Date().getTime()
+      timestamp: new Date().getTime(),
     };
     reservations.push(reservation);
     //reservations = [];
@@ -87,7 +104,7 @@ function loadVehicleList() {
   const vehicleListElement = document.getElementById("vehicle-list");
   if (vehicleListElement) {
     vehicleListElement.innerHTML = "";
-    vehicles.forEach(vehicle => {
+    vehicles.forEach((vehicle) => {
       const vehicleElement = document.createElement("article");
       vehicleElement.innerHTML = `
         <div class="vehicle-image">
@@ -116,12 +133,23 @@ function showCurrentReservations() {
   const currentReservationsElement = document.getElementById("my-reservations");
   if (currentReservationsElement) {
     currentReservationsElement.innerHTML = "";
-    reservations.forEach(reservation => {
+    reservations.forEach((reservation) => {
       const reservationElement = document.createElement("li");
       reservationElement.className = "reservation-item";
       reservationElement.innerHTML = `
-        <strong>${reservation.vehicle.name}</strong> - ${new Date(reservation.timestamp).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}, ${new Date(reservation.timestamp).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}, Fahrzeugstandort: Neukölln
-        <button class="activate-button reserve-button" data-reservation-id="${reservation.id}">Aktivieren</button>`;
+        <strong>${reservation.vehicle.name}</strong> - ${new Date(
+        reservation.timestamp
+      ).toLocaleDateString("de-DE", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })}, ${new Date(reservation.timestamp).toLocaleTimeString("de-DE", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}, Fahrzeugstandort: Neukölln
+        <button class="activate-button reserve-button" data-reservation-id="${
+          reservation.id
+        }">Aktivieren</button>`;
       currentReservationsElement.appendChild(reservationElement);
     });
   }
@@ -132,11 +160,20 @@ function showAllReservations() {
   const allReservationsElement = document.getElementById("all-reservations");
   if (allReservationsElement) {
     allReservationsElement.innerHTML = "";
-    reservations.forEach(reservation => {
+    reservations.forEach((reservation) => {
       const reservationElement = document.createElement("li");
       reservationElement.className = "reservation-item";
       reservationElement.innerHTML = `
-        <strong>${reservation.vehicle.name}</strong> - ${new Date(reservation.timestamp).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}, ${new Date(reservation.timestamp).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}, Fahrzeugstandort:Neukölln, Mitarbeiterkennnummer: ${reservation.user}
+        <strong>${reservation.vehicle.name}</strong> - ${new Date(
+        reservation.timestamp
+      ).toLocaleDateString("de-DE", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })}, ${new Date(reservation.timestamp).toLocaleTimeString("de-DE", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}, Fahrzeugstandort:Neukölln, Mitarbeiterkennnummer: ${reservation.user}
       `;
       allReservationsElement.appendChild(reservationElement);
     });
@@ -145,7 +182,9 @@ function showAllReservations() {
 
 // Funktion: Reservierung aktivieren
 function activateReservation(reservationId) {
-  const reservation = reservations.find(reservation => reservation.id === parseInt(reservationId));
+  const reservation = reservations.find(
+    (reservation) => reservation.id === parseInt(reservationId)
+  );
   if (reservation) {
     // Hier kann die Logik für die Aktivierung der Reservierung hinzugefügt werden
     console.log(`Reservierung ${reservationId} aktiviert`);
@@ -154,24 +193,22 @@ function activateReservation(reservationId) {
   }
 }
 
-
-
 // Event-Listener für Reservier-Button
 document.addEventListener("DOMContentLoaded", () => {
   const reserveButtons = document.querySelectorAll(".reserve-button");
-  reserveButtons.forEach(button => {
-    button.addEventListener("click", event => {
+  reserveButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
       const vehicleId = event.target.dataset.vehicleId;
       reserveVehicle(vehicleId);
     });
   });
   const activateButtons = document.querySelectorAll(".activate-button");
-  activateButtons.forEach(button => {
-    button.addEventListener("click", event => {
+  activateButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
       const reservationId = event.target.dataset.reservationId;
       activateReservation(reservationId);
     });
-  })
+  });
   loadVehicleList();
   loadReservations();
   showCurrentReservations();

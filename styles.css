@@ -1,11 +1,11 @@
 /* Allgemeine Farben */
 :root {
-  --primary-color: #B0E0E6;
+  --primary-color: #b0e0e6;
   --secondary-color: #f8f9fa;
   --accent-color: #28a745;
   --error-color: #dc3545;
   --text-color: #333;
-  --font-family: 'Open Sans', sans-serif;
+  --font-family: "Open Sans", sans-serif;
 }
 
 /* Globales Reset */
@@ -153,7 +153,7 @@ body {
 }
 
 .vehicle-card p {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .vehicle-card .reserve-button {
@@ -197,7 +197,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #f8f9fa;
   color: #333;
 }
@@ -257,7 +257,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .login-section h2 {
   text-align: center;

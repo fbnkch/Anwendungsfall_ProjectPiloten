@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Startseite</a>
-      <a href="vehicles.html" class="nav-link">Fahrzeuge</a>
-      <a href="reservations.html" class="nav-link">Reservierungen</a>
-      <a href="#" class="nav-link">Karte</a>
-      <a href="#" class="nav-link">Standorte</a>
-      <span id="user-status" class="nav-link">Login</span>
-    </nav>
-  </header>
-  <main class="main">
-    <section class="login-section">
-      <div class="login-card">
-        <h2>Melden Sie sich an</h2>
-        <form id="login-form">
-          <label for="username">Active Direct Number:</label>
-          <input type="text" id="username" placeholder="Geben Sie Ihre Nummer ein" required>
-          <button type="submit" class="login-button">Anmelden</button>
-        </form>
-        <div id="login-feedback" class="feedback"></div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>© 2025 Niederweser Verlag GmbH</p>
-  </footer>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Startseite</a>
+        <a href="vehicles.html" class="nav-link">Fahrzeuge</a>
+        <a href="reservations.html" class="nav-link">Reservierungen</a>
+        <a href="#" class="nav-link">Karte</a>
+        <a href="#" class="nav-link">Standorte</a>
+        <span id="user-status" class="nav-link">Login</span>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="login-section">
+        <div class="login-card">
+          <h2>Melden Sie sich an</h2>
+          <form id="login-form">
+            <label for="username">Active Direct Number:</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Geben Sie Ihre Nummer ein"
+              required
+            />
+            <button type="submit" class="login-button">Anmelden</button>
+          </form>
+          <div id="login-feedback" class="feedback"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>© 2025 Niederweser Verlag GmbH</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
